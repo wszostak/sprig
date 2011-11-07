@@ -357,7 +357,14 @@ abstract class Sprig_Core {
 							if ( isset($field->left_foreign_key) AND $field->left_foreign_key)
 							{
 								$fk = $field->through.'.'.$field->left_foreign_key;
-								$fk2 = $field->through.'.'.$model->pk();
+								if (isset($field->right_foreign_key) AND $field->right_foreign_key)
+								{
+									$fk2 = $field->through.'.'.$field->right_foreign_key;
+								}
+								else
+								{
+									$fk2 = $field->through.'.'.$model->pk();
+								}
 							}
 							else
 							{
