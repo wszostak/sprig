@@ -256,12 +256,12 @@ abstract class Sprig_Core {
 
 				if ( ! empty($field->min_length))
 				{
-					$field->rules['min_length'] = array($field->min_length);
+					$field->rules['min_length'] = array(':value', $field->min_length);
 				}
 
 				if ( ! empty($field->max_length))
 				{
-					$field->rules['max_length'] = array($field->max_length);
+					$field->rules['max_length'] = array(':value', $field->max_length);
 				}
 			}
 
@@ -1600,7 +1600,7 @@ abstract class Sprig_Core {
 	 * @param   string  field name
 	 * @return  void
 	 */
-	public function _unique_field(Validate $array, $field)
+	public function _unique_field(Validation $array, $field)
 	{
 		if ($array[$field])
 		{
