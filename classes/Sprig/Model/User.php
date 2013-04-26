@@ -44,13 +44,13 @@ abstract class Sprig_Model_User extends Sprig {
 	}
 
 	/**
-	 * Login with a Validate callback:
+	 * Login with a Validation callback:
 	 *
 	 *     // Create an empty user
 	 *     $user = Sprig::factory('user');
 	 *
-	 *     // Create a Validate instance
-	 *     $post = Validate::factory($_POST)
+	 *     // Create a Validation instance
+	 *     $post = Validation::factory($_POST)
 	 *         ->rules('username', $user->field('username')->rules)
 	 *         ->rules('password', $user->field('password')->rules)
 	 *         ->callback('usernane', array($user, '_login'));
@@ -61,11 +61,11 @@ abstract class Sprig_Model_User extends Sprig {
 	 *         URL::redirect($uri);
 	 *     }
 	 *
-	 * @param   object  Validate instance
+	 * @param   object  Validation instance
 	 * @param   string  field name
 	 * @return  void
 	 */
-	public function _login(Validate $array, $field)
+	public function _login(Validation $array, $field)
 	{
 		if ($array['username'] AND $array['password'])
 		{

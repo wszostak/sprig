@@ -61,7 +61,7 @@ class Sprig_Field_Image extends Sprig_Field_Char {
 		return $this->directory.$value;
 	}
 
-	public function _upload_image(Validate $array, $input)
+	public function _upload_image(Validation $array, $input)
 	{
 		if ($array->errors())
 		{
